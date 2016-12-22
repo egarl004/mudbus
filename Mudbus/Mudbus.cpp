@@ -36,6 +36,11 @@ void Mudbus::Run()
   // Client client = MbServer.available();
   // For Arduino 1.0
   EthernetClient client = MbServer.available();
+  if(!client.connected())
+  {
+	  client.stop();
+	  return;
+  }
   if(client.available())
   {
     Reads = 1 + Reads * (Reads < 999);
