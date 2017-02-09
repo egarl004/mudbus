@@ -60,7 +60,7 @@ void Mudbus::Run()
       #endif
     }
   }
-  client.stop();
+  
   if(millis() > (PreviousActivityTime + 60000))
   {
     if(Active)
@@ -228,6 +228,7 @@ void Mudbus::Run()
     Serial.print(Writes);
     Serial.println();
   #endif
+client.stop();
 }
 
 
